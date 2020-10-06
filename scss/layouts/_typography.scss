@@ -1,0 +1,55 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+figure,ul,li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+p {
+    @include font ($font-paragraph, $color-paragraph, 400, 2);
+    @include responsive(phone-only) {
+        @include font ($font-paragraph - 2px, false, false, false);
+    }
+}
+
+
+a {
+    text-decoration: none;
+    @include font($font-paragraph, $color-anchor, 500);
+}
+
+::selection{
+    background: $color-theme;
+    color: $color-body;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: $color-theme;
+  // outline: 1px solid $color-theme;
+}

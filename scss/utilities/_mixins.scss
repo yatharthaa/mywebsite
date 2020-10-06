@@ -1,0 +1,39 @@
+@mixin font ($size: false, $colour: false, $weight: false,  $lh: false) {
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin flex ($display: false, $justify-content: false, $align-items: false,  $flex-direction: false) {
+    @if $display { display: $display; }
+    @if $justify-content { justify-content: $justify-content; }
+    @if $align-items { align-items: $align-items; }
+    @if $flex-direction { flex-direction: $flex-direction; }
+}
+
+@mixin responsive($size) {
+    @if $size==phone-only {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $size==tablet-portrait-up {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $size==tablet-landscape-up {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $size==desktop-up {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    }
+}
